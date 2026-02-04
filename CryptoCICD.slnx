@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CryptoApi.Tests/CryptoApi.Tests.csproj" />
+  <Project Path="CryptoApi/CryptoApi.csproj" />
+</Solution>
