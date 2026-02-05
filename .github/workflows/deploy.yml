@@ -11,7 +11,7 @@ jobs:
       AWS_REGION: eu-north-1
       EB_APPLICATION_NAME: crypto-cicd-api-csharp-prod
       EB_ENVIRONMENT_NAME: Crypto-cicd-api-csharp-prod-env
-      EB_S3_KEY: deploy-${{ github.sha }}.zip
+      EB_S3_KEY: deploy-${{ github.sha }}-${{ github.run_number }}.zip
 
     steps:
       - name: Checkout
@@ -39,11 +39,11 @@ jobs:
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name "${{ env.EB_APPLICATION_NAME }}" \
-            --version-label "${{ github.sha }}" \
+            --version-label "${{ github.sha }}-${{ github.run_number }}" \
             --source-bundle S3Bucket="${{ secrets.EB_S3_BUCKET }}",S3Key="${{ env.EB_S3_KEY }}"
 
       - name: Deploy to EB environment
         run: |
           aws elasticbeanstalk update-environment \
-            --environment-name "${{ env.EB_ENVIRONMENT_NAME }}" \
+            --environment-name "${{ github.sha }}-${{ github.run_number }}"
             --version-label "${{ github.sha }}"
