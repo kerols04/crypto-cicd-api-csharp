@@ -11,12 +11,8 @@ jobs:
       AWS_REGION: eu-north-1
       EB_APPLICATION_NAME: crypto-cicd-api-csharp-prod
       EB_ENVIRONMENT_NAME: Crypto-cicd-api-csharp-prod-env
-
-      # Unik fil per run + rerun
-      EB_S3_KEY: deploy-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}.zip
-
-      # Unik version-label per run + rerun (löser "already exists")
-      EB_VERSION_LABEL: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+      EB_VERSION_LABEL: "${{ github.sha }}-${{ github.run_number }}"
+      EB_S3_KEY: "deploy-${{ github.sha }}-${{ github.run_number }}.zip"
 
     steps:
       - name: Checkout
@@ -38,8 +34,7 @@ jobs:
                "**/TestResults/**"
 
       - name: Upload to S3
-        run: |
-          aws s3 cp "${{ env.EB_S3_KEY }}" "s3://${{ secrets.EB_S3_BUCKET }}/${{ env.EB_S3_KEY }}"
+        run: aws s3 cp "${{ env.EB_S3_KEY }}" "s3://${{ secrets.EB_S3_BUCKET }}/${{ env.EB_S3_KEY }}"
 
       - name: Create EB application version
         run: |
