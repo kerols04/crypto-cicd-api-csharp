@@ -12,6 +12,7 @@ jobs:
       EB_APPLICATION_NAME: crypto-cicd-api-csharp-prod
       EB_ENVIRONMENT_NAME: Crypto-cicd-api-csharp-prod-env
       EB_S3_KEY: deploy-${{ github.sha }}-${{ github.run_number }}.zip
+      EB_VERSION_LABEL: ${{ github.sha }}-${{ github.run_number }}
 
     steps:
       - name: Checkout
@@ -33,17 +34,19 @@ jobs:
                "**/TestResults/**"
 
       - name: Upload to S3
-        run: aws s3 cp "${{ env.EB_S3_KEY }}" "s3://${{ secrets.EB_S3_BUCKET }}/${{ env.EB_S3_KEY }}"
+        run: |
+          aws s3 cp "${{ env.EB_S3_KEY }}" "s3://${{ secrets.EB_S3_BUCKET }}/${{ env.EB_S3_KEY }}"
 
       - name: Create EB application version
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name "${{ env.EB_APPLICATION_NAME }}" \
-            --version-label "${{ github.sha }}-${{ github.run_number }}" \
+            --version-label "${{ env.EB_VERSION_LABEL }}" \
             --source-bundle S3Bucket="${{ secrets.EB_S3_BUCKET }}",S3Key="${{ env.EB_S3_KEY }}"
 
       - name: Deploy to EB environment
         run: |
           aws elasticbeanstalk update-environment \
-            --environment-name "${{ github.sha }}-${{ github.run_number }}"
-            --version-label "${{ github.sha }}"
+            --environment-name "${{ env.EB_ENVIRONMENT_NAME }}" \
+            --version-label "${{ env.EB_VERSION_LABEL }}"
+
