@@ -113,11 +113,7 @@ Gå till: Settings → Secrets and variables → Actions
 * Region: `eu-north-1`
 * Elastic Beanstalk Application: `crypto-cicd-api-csharp-prod`
 * Elastic Beanstalk Environment: `Crypto-cicd-api-csharp-prod-env`
-  EOF
 
-
-### Om du vill skapa README via terminal (rätt sätt)
-Kör detta i terminaln (inte i README):
 ## FigJam – CI/CD Process (Fullstack)
 
 - FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
