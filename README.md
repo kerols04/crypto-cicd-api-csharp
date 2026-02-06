@@ -1,8 +1,6 @@
-```bash
-cat > README.md <<'EOF'
 # Encryption API CI/CD (C# .NET 8)
 
-Detta repo innehåller ett enkelt C#-API med två endpoints för kryptering och avkryptering via ett Caesar-chiffer.
+Detta repo innehåller ett enkelt C#-API med två endpoints för kryptering och avkryptering via ett Caesar-chiffer.  
 Syftet är att visa en komplett CI/CD-kedja med Git Flow, GitHub Actions (CI) och deployment till AWS Elastic Beanstalk (Docker).
 
 ## Funktioner
@@ -13,8 +11,7 @@ Syftet är att visa en komplett CI/CD-kedja med Git Flow, GitHub Actions (CI) oc
 - CD: deploy till Elastic Beanstalk på push till `main`
 
 ## Projektstruktur
-```
-
+```text
 .
 ├─ src/
 │  └─ EncryptionApi/
@@ -30,12 +27,13 @@ Syftet är att visa en komplett CI/CD-kedja med Git Flow, GitHub Actions (CI) oc
 ├─ Dockerfile
 └─ README.md
 
+
 ````
 
 ## API-endpoints
 
 ### Health
-```bash
+```
 curl -s http://localhost:5000/
 ````
 
@@ -47,46 +45,40 @@ Exempel-svar:
 
 ### Encrypt
 
-```bash
 curl -s -X POST http://localhost:5000/encrypt \
   -H "Content-Type: application/json" \
   -d '{"text":"Hello, World!","shift":3}'
-```
+
 
 Exempel-svar:
 
-```json
 { "result": "Khoor, Zruog!" }
-```
+
 
 ### Decrypt
 
-```bash
 curl -s -X POST http://localhost:5000/decrypt \
   -H "Content-Type: application/json" \
   -d '{"text":"Khoor, Zruog!","shift":3}'
-```
+
 
 Exempel-svar:
 
-```json
 { "result": "Hello, World!" }
-```
+
 
 ## Lokal utveckling
 
 ### Restore + Run
 
-```bash
 dotnet restore src/EncryptionApi/EncryptionApi.csproj
 dotnet run --project src/EncryptionApi/EncryptionApi.csproj
-```
+
 
 ### Test
 
-```bash
 dotnet test tests/EncryptionApi.Tests/EncryptionApi.Tests.csproj -c Release
-```
+
 
 ## Git Flow / Branch-strategi
 
@@ -123,8 +115,14 @@ Gå till: Settings → Secrets and variables → Actions
 * Elastic Beanstalk Environment: `Crypto-cicd-api-csharp-prod-env`
   EOF
 
+
+### Om du vill skapa README via terminal (rätt sätt)
+Kör detta i terminaln (inte i README):
+
 ```
-::contentReference[oaicite:0]{index=0}
-```
+cat > README.md <<'EOF'
+[KListra in den rena Markdownen här]
+EOF
+
 
 
