@@ -118,6 +118,15 @@ Gå till: Settings → Secrets and variables → Actions
 
 ### Om du vill skapa README via terminal (rätt sätt)
 Kör detta i terminaln (inte i README):
+## FigJam – CI/CD Process (Fullstack)
+
+- FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
+  - [Öppna FigJam-skissen här]([PASTA_IN_DIN_FIGMA_LÄNK_HÄR](https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0))
+**Innehåll i skissen:**
+- Git Flow: `feature/*` → PR → `develop` → PR → `main`
+- CI (GitHub Actions): build + test på Pull Requests
+- CD (GitHub Actions): deploy till AWS Elastic Beanstalk på merge/push till `main`
+- Fullstack: exempel på frontend build/test/deploy + backend build/test/deploy
 
 
 
