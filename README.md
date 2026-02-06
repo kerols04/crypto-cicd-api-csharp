@@ -122,7 +122,7 @@ Gå till: Settings → Secrets and variables → Actions
 - FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
 - Länk:
 ```
-POST https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0
+Länk: [FigJam – CI/CD Process (Fullstack)]([DIN_FIGMA_LÄNK](https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0))
 ```
 **Innehåll i skissen:**
 - Git Flow: `feature/*` → PR → `develop` → PR → `main`
