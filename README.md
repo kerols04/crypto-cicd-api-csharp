@@ -71,9 +71,11 @@ Exempel-svar:
 
 ### Restore + Run
 
+### Restore + Run
+```bash
 dotnet restore src/EncryptionApi/EncryptionApi.csproj
 dotnet run --project src/EncryptionApi/EncryptionApi.csproj
-
+```
 
 ### Test
 
@@ -113,11 +115,19 @@ Gå till: Settings → Secrets and variables → Actions
 * Region: `eu-north-1`
 * Elastic Beanstalk Application: `crypto-cicd-api-csharp-prod`
 * Elastic Beanstalk Environment: `Crypto-cicd-api-csharp-prod-env`
-  EOF
+
+## FigJam – CI/CD Process (Fullstack)
 
 
-### Om du vill skapa README via terminal (rätt sätt)
-Kör detta i terminaln (inte i README):
+- FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
+- Länk:
+POST https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0
+
+**Innehåll i skissen:**
+- Git Flow: `feature/*` → PR → `develop` → PR → `main`
+- CI (GitHub Actions): build + test på Pull Requests
+- CD (GitHub Actions):- CD: deploy till Elastic Beanstalk när PR mergas till `main`
+- Fullstack: exempel på frontend build/test/deploy + backend build/test/deploy
 
 
 
