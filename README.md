@@ -71,6 +71,8 @@ Exempel-svar:
 
 ### Restore + Run
 
+### Restore + Run
+```bash
 dotnet restore src/EncryptionApi/EncryptionApi.csproj
 dotnet run --project src/EncryptionApi/EncryptionApi.csproj
 
@@ -116,13 +118,14 @@ Gå till: Settings → Secrets and variables → Actions
 
 ## FigJam – CI/CD Process (Fullstack)
 
+
 - FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
-- Öppna FigJam-skissen här: POST https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0 
+- Öppna FigJam-skissen här: [FigJam – CI/CD Process (Fullstack)](https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0)
 
 **Innehåll i skissen:**
 - Git Flow: `feature/*` → PR → `develop` → PR → `main`
 - CI (GitHub Actions): build + test på Pull Requests
-- CD (GitHub Actions): deploy till AWS Elastic Beanstalk på merge/push till `main`
+- CD (GitHub Actions):- CD: deploy till Elastic Beanstalk när PR mergas till `main`
 - Fullstack: exempel på frontend build/test/deploy + backend build/test/deploy
 
 
