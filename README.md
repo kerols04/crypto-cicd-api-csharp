@@ -119,10 +119,6 @@ Gå till: Settings → Secrets and variables → Actions
 ### Om du vill skapa README via terminal (rätt sätt)
 Kör detta i terminaln (inte i README):
 
-```
-cat > README.md <<'EOF'
-[KListra in den rena Markdownen här]
-EOF
 
 
 
