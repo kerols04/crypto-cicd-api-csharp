@@ -75,7 +75,7 @@ Exempel-svar:
 ```bash
 dotnet restore src/EncryptionApi/EncryptionApi.csproj
 dotnet run --project src/EncryptionApi/EncryptionApi.csproj
-
+```
 
 ### Test
 
@@ -120,8 +120,10 @@ Gå till: Settings → Secrets and variables → Actions
 
 
 - FigJam-skiss (branch-struktur, CI/CD-flöde, frontend + backend):
-- Öppna FigJam-skissen här: [FigJam – CI/CD Process (Fullstack)](https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0)
-
+- Länk:
+```
+[FigJam – CI/CD Process (Fullstack) POST https://www.figma.com/board/1ikMbMOjL8GRUHpV7vqxf0/Untitled?node-id=0-1&p=f&t=574xEygKNPx845tv-0
+```
 **Innehåll i skissen:**
 - Git Flow: `feature/*` → PR → `develop` → PR → `main`
 - CI (GitHub Actions): build + test på Pull Requests
